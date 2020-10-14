@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div id='container'>
+        <h4>Task Tracker</h4>
+        <form class="col s12 input-container">
+            <div class="row">
+                <div class="input-field col s5">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input id="icon_prefix" type="text" class="title validate ">
+                    <label for="icon_prefix">Task</label>
+                </div>
+                <div class="input-field col s5">
+                    <input id="icon_prefix" type="text" class="description validate">
+                    <label for="icon_prefix">Task description</label>
+                </div>
+                <div class="input-field col s1">
+                    <a class="#009688 teal btn btn-floating btn-small waves-effect waves-light red">
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+            </div>
+        </form>
+
+        <h5>Incomplete</h5>
+        <div class='not-comp'></div>
+        <h5 style="margin-top: 30px;">Completed</h5>
+        <div class="comp"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="TaskManager.js"></script>
+    <script src="renderer.js"></script>
+    <script type='module' src="main.js"></script>
+</body>
+
+</html>
