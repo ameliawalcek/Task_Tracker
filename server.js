@@ -6,7 +6,7 @@ const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
 require("dotenv").config()
-const { DB_URL, PORT } = process.env
+const { MONGODB_URI, PORT } = process.env
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/todo`, { useNewUrlParser: true, useUnifiedTopology: true })
 // mongoose.connect(
 //   DB_URL,
