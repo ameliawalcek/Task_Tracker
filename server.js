@@ -6,7 +6,7 @@ const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
 require("dotenv").config()
-const { MONGODB_URI, PORT } = process.env
+const { PORT } = process.env
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/todo`, { useNewUrlParser: true, useUnifiedTopology: true })
 // mongoose.connect(
 //   DB_URL,
@@ -24,6 +24,4 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/', api)
 
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server is up on port ${PORT}`)
-})
+app.listen(process.env.PORT || PORT)
