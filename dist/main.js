@@ -2,11 +2,13 @@ const taskManager = new TaskManager()
 const renderer = new Renderer()
 
 const initialize = async function () {
+    console.log('initialize')
     await taskManager.getCompleteTask()
     await taskManager.getIncompleteTask()
 
     renderer.renderTasks(taskManager.completeTasks, '.comp')
     renderer.renderTasks(taskManager.incompleteTasks, '.not-comp')
+    console.log('finish initialize')
 }
 
 const handleNewTask = async function (e) {

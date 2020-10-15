@@ -6,16 +6,15 @@ const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 
 require("dotenv").config()
-const { PORT } = process.env
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/todo`, { useNewUrlParser: true, useUnifiedTopology: true })
-// mongoose.connect(
-//   DB_URL,
-//   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
-//   err => {
-//     console.log('Connected to DB')
-//     console.log(err)
-//   }
-// )
+
+mongoose.connect(
+    process.env.MONGODB_URI || `mongodb://localhost/todo`,
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    err => {
+        console.log('Connected to DB')
+        console.log(err)
+    }
+)
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
@@ -24,4 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/', api)
 
-app.listen(process.env.PORT || PORT)
+const PORT = process.env.PORT || 3001
+
+app.listen(PORT, () => {
+    console.log(`Server is up on port ${PORT}`)
+})

@@ -1,5 +1,6 @@
 class Renderer {
     renderTasks = function (text, div) {
+        console.log('rendering')
         $(div).empty()
 
         text.forEach(t => {
