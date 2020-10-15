@@ -5,24 +5,28 @@ class TaskManager {
     }
 
     async getCompleteTask() {
-        const data = await $.get('http://localhost:3001/tasks/complete')
+        console.log('fetching')
+        const data = await $.get('/tasks/complete')
         this.completeTasks = data
+        console.log('fetched initial data')
     }
 
     async getIncompleteTask() {
-        const data = await $.get('http://localhost:3001/tasks/incomplete')
+        console.log('fetching')
+        const data = await $.get('/tasks/incomplete')
         this.incompleteTasks = data
+        console.log('fetched initial data')
     }
 
     async saveTask(title, description) {
-        let newTask = await $.post('http://localhost:3001/task', { title, description })
+        let newTask = await $.post('/task', { title, description })
         this.incompleteTasks.push(newTask)
     }
 
     async completeTask(id) {
         const updatedTask =
             await $.ajax({
-                url: 'http://localhost:3001/task',
+                url: '/task',
                 type: 'PUT',
                 data: { id }
             })
@@ -32,7 +36,7 @@ class TaskManager {
 
     async deleteTask(id) {
         await $.ajax({
-            url: `http://localhost:3001/task/${id}`,
+            url: `/task/${id}`,
             method: 'DELETE'
         })
         return
