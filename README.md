@@ -1,5 +1,5 @@
 # [Task Tracker](https://the-task-tracker.herokuapp.com/)
-Full stack application using: Vanilla js, JQuery, Express, Mongoose, Atlas: MongoDB, and Heroku
+Full stack application using: Vanilla js, JQuery, Express, Mongoose, Atlas: MongoDB, Materialize, and Heroku
 
 Use this clean and simple single page application to track what you need to do and what you have completed. 
 View and interact with the application here: [Task Tracker](https://the-task-tracker.herokuapp.com/)<br/> <br/>
